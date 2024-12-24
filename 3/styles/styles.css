@@ -1,0 +1,65 @@
+h1 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container {
+  padding: 20px;
+}
+
+input[type="text"] {
+  margin-bottom: 10px;
+}
+
+.narrow-button {
+  margin-left: 10px;
+}
+
+button {
+  white-space: nowrap;
+}
+
+ul.list-group {
+  margin-top: 20px;
+}
+
+li.list-group-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 15px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+li.list-group-item strong {
+  font-size: 1.1em;
+}
+
+li.list-group-item p {
+  margin: 5px 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+button.btn-danger {
+  font-size: 0.8em;
+}
+
+.text-danger {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #d9534f;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

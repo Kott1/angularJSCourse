@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="NarrowItDownApp">
+  <head>
+    <title>Narrow Down Your Menu Choice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/styles.css">
+  </head>
+<body>
+  <div class="container" ng-controller="NarrowItDownController as narrow">
+    <h1>Narrow Down Your Chinese Menu Choice</h1>
+
+    <div class="form-group">
+      <input type="text" ng-model="narrow.searchTerm" placeholder="Search term" class="form-control">
+    </div>
+    <div class="form-group narrow-button">
+      <button class="btn btn-primary" ng-click="narrow.narrowItDown()">Narrow It Down For Me!</button>
+    </div>
+
+    <div ng-if="narrow.found.length === 0 && narrow.searched">
+      <p class="text-danger">Nothing found</p>
+    </div>
+
+    <ul class="list-group" ng-if="narrow.found.length > 0">
+      <li class="list-group-item" ng-repeat="item in narrow.found">
+        <strong>{{ item.name }}</strong> ({{ item.short_name }})
+        <p>{{ item.description }}</p>
+        <button class="btn btn-danger btn-sm" ng-click="narrow.removeItem($index)">Don't want this one!</button>
+      </li>
+    </ul>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
